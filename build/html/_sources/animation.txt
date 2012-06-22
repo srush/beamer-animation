@@ -28,7 +28,7 @@ a talk developed in this way.
    <center>
    <iframe
    src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
-   style="width:400px; height:350px;" frameborder="1"></iframe>
+   style="width:500px; height:400px;" frameborder="1"></iframe>
    </center>         
 
 And here's an example of the presentation we'll build in this tutorial.
@@ -37,8 +37,8 @@ And here's an example of the presentation we'll build in this tutorial.
 
    <center>
    <iframe
-   src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
-   style="width:400px; height:350px;" frameborder="1"></iframe>
+   src="http://docs.google.com/gview?url=_static/kmeans.pdf&embedded=true"
+   style="width:500px; height:400px;" frameborder="1"></iframe>
    </center>         
 
 The code for the tutorial can also be downloaded from its `github repository <https://github.com/srush/beamer-animation/>`_.
