@@ -3,16 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-********************
+***************************
 Beamer Animation Tutorial
-********************
+***************************
 
-Contents:
-
-.. toctree::
-   :maxdepth: 2
-
-   examples
 
 Introduction
 =======================================
@@ -20,28 +14,97 @@ Introduction
 This tutorial is about how to make a technical presentations with
 cool animations. When I first asked around, people recommended
 either (1) using OpenOffice or (2) buying a Mac. This page gives a walkthrough of
-the another method using LaTeX, Python, and TiKZ. Here's an example of
-a talk developed in this way.
-
-.. raw:: html
-
-   <center>
-   <iframe
-   src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
-   style="width:500px; height:400px;" frameborder="1"></iframe>
-   </center>         
+the another method using LaTeX, Python, and TiKZ. 
 
 And here's an example of the presentation we'll build in this tutorial.
 
 .. raw:: html
 
+   <div style="padding: 40px">
    <center>
    <iframe
-   src="http://docs.google.com/gview?url=_static/kmeans.pdf&embedded=true"
+   src="http://docs.google.com/gview?url=http://srush.github.com/beamer-animation/build/html/_static/kmeans.pdf&embedded=true"
+   style="width:500px; height:400px;" frameborder="1"></iframe>
+   </center>
+   </div>
+
+Here's an example of
+a talk developed in this way.
+
+.. raw:: html
+
+   <div style="padding: 40px">
+   <center>
+   <iframe
+   src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
    style="width:500px; height:400px;" frameborder="1"></iframe>
    </center>         
+   </div>
 
-The code for the tutorial can also be downloaded from its `github repository <https://github.com/srush/beamer-animation/>`_.
+
+Code Setup
+=========================================
+
+To start 
+
+.. code-block:: bash
+
+   sudo apt-get install scons beamer tikz            
+
+The code for the tutorial lives in a `github repository <https://github.com/srush/beamer-animation/>`_. You can install the library by.
+
+.. code-block:: bash
+
+   $ git clone git://github.com/srush/beamer-animation.git
+   $ cd beamer-animation
+   $ sudo easy_install .
+
+
+.. code-block:: bash
+  
+   $ mkdir kmeans-slides
+   $ beamer-animation-quickstart
+
+   
+.. code-block:: none
+
+   kmeans-slides/
+   |-- animations/
+   |-- custom/
+   |-- diagrams/
+   |-- plots/ 
+   |-- scripts/
+   |   |-- static/
+   |   |   |-- generate_diagrams.py
+   |
+   |-- slides.tex
+   |-- SConstruct
+
+
+.. code-block:: latex
+
+   \documentclass{beamer}
+   \mode<presentation>
+   \setbeamertemplate{navigation symbols}{}
+   \usepackage{tikz}
+   % Needed for diagrams.
+   \def\im#1#2{
+     \node(#1) [scale=#2]{\pgfbox[center,top]{\pgfuseimage{#1}}
+     };}
+     \input{pictures_header}
+     \begin{document}
+     \begin{frame}[t]{K-Means}
+       \vspace{-1cm}
+         \begin{figure}
+             \centering
+                 \begin{tikzpicture}
+                       \foreach \x in {1,...,10} {
+                               \uncover<\x>{\im{kmeans\x}{0.6}}
+                                     }        
+                                         \end{tikzpicture}
+                                           \end{figure}
+                                           \end{frame}
+                                           \end{document}
 
 Problem Description: K-Means
 ========================================

@@ -32,31 +32,81 @@
             
   <div class="section" id="beamer-animation-tutorial">
 <h1>Beamer Animation Tutorial<a class="headerlink" href="#beamer-animation-tutorial" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<ul>
-<li class="toctree-l1"><a class="reference external" href="examples.html">TiKZ Examples</a><ul>
-<li class="toctree-l2"><a class="reference external" href="examples.html#machine-learning">Machine Learning</a></li>
-<li class="toctree-l2"><a class="reference external" href="examples.html#natural-language-processing">Natural Language Processing</a></li>
-</ul>
-</li>
-</ul>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
 <p>This tutorial is about how to make a technical presentations with
 cool animations. When I first asked around, people recommended
 either (1) using OpenOffice or (2) buying a Mac. This page gives a walkthrough of
-the another method using LaTeX, Python, and TiKZ. Here&#8217;s an example of
+the another method using LaTeX, Python, and TiKZ.</p>
+<p>And here&#8217;s an example of the presentation we&#8217;ll build in this tutorial.</p>
+<div style="padding: 40px">
+<center>
+<iframe
+src="http://docs.google.com/gview?url=http://srush.github.com/beamer-animation/build/html/_static/kmeans.pdf&embedded=true"
+style="width:500px; height:400px;" frameborder="1"></iframe>
+</center>
+</div><p>Here&#8217;s an example of
 a talk developed in this way.</p>
+<div style="padding: 40px">
 <center>
 <iframe
 src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
 style="width:500px; height:400px;" frameborder="1"></iframe>
-</center><p>And here&#8217;s an example of the presentation we&#8217;ll build in this tutorial.</p>
-<center>
-<iframe
-src="http://docs.google.com/gview?url=_static/kmeans.pdf&embedded=true"
-style="width:500px; height:400px;" frameborder="1"></iframe>
-</center><p>The code for the tutorial can also be downloaded from its <a class="reference external" href="https://github.com/srush/beamer-animation/">github repository</a>.</p>
+</center>
+</div></div>
+<div class="section" id="code-setup">
+<h2>Code Setup<a class="headerlink" href="#code-setup" title="Permalink to this headline">¶</a></h2>
+<p>To start</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install scons beamer tikz
+</pre></div>
+</div>
+<p>The code for the tutorial lives in a <a class="reference external" href="https://github.com/srush/beamer-animation/">github repository</a>. You can install the library by.</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>git clone git://github.com/srush/beamer-animation.git
+<span class="nv">$ </span><span class="nb">cd </span>beamer-animation
+<span class="nv">$ </span>sudo easy_install .
+</pre></div>
+</div>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>mkdir kmeans-slides
+<span class="nv">$ </span>beamer-animation-quickstart
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre>kmeans-slides/
+|-- animations/
+|-- custom/
+|-- diagrams/
+|-- plots/
+|-- scripts/
+|   |-- static/
+|   |   |-- generate_diagrams.py
+|
+|-- slides.tex
+|-- SConstruct
+</pre></div>
+</div>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>beamer<span class="nb">}</span>
+<span class="k">\mode</span>&lt;presentation&gt;
+<span class="k">\setbeamertemplate</span><span class="nb">{</span>navigation symbols<span class="nb">}{}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+<span class="c">% Needed for diagrams.</span>
+<span class="k">\def\im</span>#1#2<span class="nb">{</span>
+  <span class="k">\node</span>(#1) [scale=#2]<span class="nb">{</span><span class="k">\pgfbox</span><span class="na">[center,top]</span><span class="nb">{</span><span class="k">\pgfuseimage</span><span class="nb">{</span>#1<span class="nb">}}</span>
+  <span class="nb">}</span>;<span class="nb">}</span>
+  <span class="k">\input</span><span class="nb">{</span>pictures<span class="nb">_</span>header<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>frame<span class="nb">}</span>[t]<span class="nb">{</span>K-Means<span class="nb">}</span>
+    <span class="k">\vspace</span><span class="nb">{</span>-1cm<span class="nb">}</span>
+      <span class="k">\begin</span><span class="nb">{</span>figure<span class="nb">}</span>
+          <span class="k">\centering</span>
+              <span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+                    <span class="k">\foreach</span> <span class="k">\x</span> in <span class="nb">{</span>1,...,10<span class="nb">}</span> <span class="nb">{</span>
+                            <span class="k">\uncover</span>&lt;<span class="k">\x</span>&gt;<span class="nb">{</span><span class="k">\im</span><span class="nb">{</span>kmeans<span class="k">\x</span><span class="nb">}{</span>0.6<span class="nb">}}</span>
+                                  <span class="nb">}</span>
+                                      <span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+                                        <span class="k">\end</span><span class="nb">{</span>figure<span class="nb">}</span>
+                                        <span class="k">\end</span><span class="nb">{</span>frame<span class="nb">}</span>
+                                        <span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="problem-description-k-means">
 <h2>Problem Description: K-Means<a class="headerlink" href="#problem-description-k-means" title="Permalink to this headline">¶</a></h2>
@@ -87,6 +137,7 @@ style="width:500px; height:400px;" frameborder="1"></iframe>
             <ul>
 <li><a class="reference external" href="#">Beamer Animation Tutorial</a><ul>
 <li><a class="reference external" href="#introduction">Introduction</a></li>
+<li><a class="reference external" href="#code-setup">Code Setup</a></li>
 <li><a class="reference external" href="#problem-description-k-means">Problem Description: K-Means</a></li>
 <li><a class="reference external" href="#k-means">K-Means</a></li>
 </ul>
