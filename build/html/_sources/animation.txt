@@ -1,0 +1,79 @@
+.. beamer-animation documentation master file, created by
+   sphinx-quickstart on Sat Jun 16 17:53:04 2012.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+********************
+Beamer Animation Tutorial
+********************
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+   examples
+
+Introduction
+=======================================
+
+This tutorial is about how to make a technical presentations with
+cool animations. When I first asked around, people recommended
+either (1) using OpenOffice or (2) buying a Mac. This page gives a walkthrough of
+the another method using LaTeX, Python, and TiKZ. Here's an example of
+a talk developed in this way.
+
+.. raw:: html
+
+   <center>
+   <iframe
+   src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
+   style="width:400px; height:350px;" frameborder="1"></iframe>
+   </center>         
+
+And here's an example of the presentation we'll build in this tutorial.
+
+.. raw:: html
+
+   <center>
+   <iframe
+   src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
+   style="width:400px; height:350px;" frameborder="1"></iframe>
+   </center>         
+
+The code for the tutorial can also be downloaded from its `github repository <https://github.com/srush/beamer-animation/>`_.
+
+Problem Description: K-Means
+========================================
+
+So assume that we have to give a talk for class on the 
+`K-Means algorithm
+<http://en.wikipedia.org/wiki/K-means_clustering>`_. We'll want to include technical slides describing its mathematical definition, so using LaTeX makes sense. However it is also helpful to see the algorithm on an example, so we want to include an animation. 
+
+First let's assume we have a simple implementation of k-means.
+ 
+
+
+.. code-block:: python
+         
+   def hello():
+      """This function"""
+      print "hello"
+
+.. raw:: html
+
+   <iframe src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true" style="width:400px; height:300px;" frameborder="0"></iframe>
+
+
+K-Means
+=========================================
+
+Here is some more text
+         
+.. Indices and tables
+.. ==================
+
+.. * :ref:`genindex`
+.. * :ref:`modindex`
+.. * :ref:`search`
+

@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Beamer Animation Tutorial &mdash; beamer-animation v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="beamer-animation v1.0 documentation" href="index.html" />
+    <link rel="next" title="TiKZ Examples" href="examples.html" />
+    <link rel="prev" title="Beamer Animation Tutorial" href="index.html" /> 
+  </head>
+  <body>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="beamer-animation-tutorial">
+<h1>Beamer Animation Tutorial<a class="headerlink" href="#beamer-animation-tutorial" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<ul>
+<li class="toctree-l1"><a class="reference external" href="examples.html">TiKZ Examples</a><ul>
+<li class="toctree-l2"><a class="reference external" href="examples.html#machine-learning">Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference external" href="examples.html#natural-language-processing">Natural Language Processing</a></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
+<p>This tutorial is about how to make a technical presentations with
+cool animations. When I first asked around, people recommended
+either (1) using OpenOffice or (2) buying a Mac. This page gives a walkthrough of
+the another method using LaTeX, Python, and TiKZ. Here&#8217;s an example of
+a talk developed in this way.</p>
+<center>
+<iframe
+src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
+style="width:400px; height:350px;" frameborder="1"></iframe>
+</center><p>And here&#8217;s an example of the presentation we&#8217;ll build in this tutorial.</p>
+<center>
+<iframe
+src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true"
+style="width:400px; height:350px;" frameborder="1"></iframe>
+</center><p>The code for the tutorial can also be downloaded from its <a class="reference external" href="https://github.com/srush/beamer-animation/">github repository</a>.</p>
+</div>
+<div class="section" id="problem-description-k-means">
+<h2>Problem Description: K-Means<a class="headerlink" href="#problem-description-k-means" title="Permalink to this headline">¶</a></h2>
+<p>So assume that we have to give a talk for class on the
+<a class="reference external" href="http://en.wikipedia.org/wiki/K-means_clustering">K-Means algorithm</a>. We&#8217;ll want to include technical slides describing its mathematical definition, so using LaTeX makes sense. However it is also helpful to see the algorithm on an example, so we want to include an animation.</p>
+<p>First let&#8217;s assume we have a simple implementation of k-means.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+   <span class="sd">&quot;&quot;&quot;This function&quot;&quot;&quot;</span>
+   <span class="k">print</span> <span class="s">&quot;hello&quot;</span>
+</pre></div>
+</div>
+<iframe src="http://docs.google.com/gview?url=http://people.csail.mit.edu/srush/naacl_slides.pdf&embedded=true" style="width:400px; height:300px;" frameborder="0"></iframe></div>
+<div class="section" id="k-means">
+<h2>K-Means<a class="headerlink" href="#k-means" title="Permalink to this headline">¶</a></h2>
+<p>Here is some more text</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  
+
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">Beamer Animation Tutorial</a><ul>
+<li><a class="reference external" href="#introduction">Introduction</a></li>
+<li><a class="reference external" href="#problem-description-k-means">Problem Description: K-Means</a></li>
+<li><a class="reference external" href="#k-means">K-Means</a></li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href="index.html"
+                                  title="previous chapter">Beamer Animation Tutorial</a></p>
+            <h4>Next topic</h4>
+            <p class="topless"><a href="examples.html"
+                                  title="next chapter">TiKZ Examples</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/animation.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+
+    <div class="footer">
+      &copy; Copyright 2012, Alexander Rush.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>

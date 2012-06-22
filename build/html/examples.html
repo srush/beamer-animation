@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>TiKZ Examples &mdash; beamer-animation v1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '#',
+        VERSION:     '1.0',
+        COLLAPSE_MODINDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="beamer-animation v1.0 documentation" href="index.html" />
+    <link rel="prev" title="TiKZ Examples" href="" /> 
+  </head>
+  <body>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tikz-examples">
+<h1>TiKZ Examples<a class="headerlink" href="#tikz-examples" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<ul class="simple">
+</ul>
+<div class="section" id="machine-learning">
+<h2>Machine Learning<a class="headerlink" href="#machine-learning" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hidden-markov-model">
+<h3>Hidden Markov Model<a class="headerlink" href="#hidden-markov-model" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[graphics,tightpage,active]</span><span class="nb">{</span>preview<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+<span class="k">\PreviewEnvironment</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>patterns,arrows,matrix,decorations,decorations.pathreplacing,decorations.markings,shapes<span class="nb">}</span>
+
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>scope<span class="nb">}</span> 
+    <span class="k">\node</span> <span class="nb">{</span>Hello<span class="nb">}</span>;
+  <span class="k">\end</span><span class="nb">{</span>scope<span class="nb">}</span>
+  <span class="k">\begin</span><span class="nb">{</span>scope<span class="nb">}</span>
+    <span class="k">\node</span> <span class="nb">{</span>bye<span class="nb">}</span>;
+  <span class="k">\end</span><span class="nb">{</span>scope<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/hmm.png" class="align-center" src="_images/hmm.png" style="width: 50%;" /></div>
+</div>
+</div>
+<div class="section" id="natural-language-processing">
+<h2>Natural Language Processing<a class="headerlink" href="#natural-language-processing" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="context-free-grammar">
+<h3>Context-Free Grammar<a class="headerlink" href="#context-free-grammar" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[graphics,tightpage,active]</span><span class="nb">{</span>preview<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz-qtree<span class="nb">}</span>
+<span class="k">\PreviewEnvironment</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+  <span class="c">% Uses David Chiang&#39;s excellent tikz-qtree package. </span>
+  <span class="k">\Tree</span> [.S 
+           [.NP [.N United ] ]
+           [.<span class="k">\node</span> [color = red] <span class="nb">{</span>VP<span class="nb">}</span>; 
+           [.V flies ] [.NP [ .D some ] [ .A large ] [.N jet ] ] ] ] ;
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/cfg.png" class="align-center" src="_images/cfg.png" style="width: 40%;" /></div>
+</div>
+<div class="section" id="dependency-parse">
+<h3>Dependency Parse<a class="headerlink" href="#dependency-parse" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-latex"><div class="highlight"><pre><span class="k">\documentclass</span><span class="nb">{</span>article<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="na">[graphics,tightpage,active]</span><span class="nb">{</span>preview<span class="nb">}</span>
+<span class="k">\usepackage</span><span class="nb">{</span>tikz<span class="nb">}</span>
+<span class="k">\PreviewEnvironment</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\usetikzlibrary</span><span class="nb">{</span>matrix<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>document<span class="nb">}</span>
+<span class="k">\begin</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+
+  <span class="c">% Draw the sentence. </span>
+  <span class="k">\matrix</span> (sentence) [baseline=(X.base), 
+                     matrix of nodes, 
+                     nodes in empty cells,
+                     column sep = 0.5cm, 
+                     nodes=<span class="nb">{</span>text centered, baseline=(current bounding box.west)<span class="nb">}</span>] 
+                     <span class="nb">{</span>
+                        <span class="nb">&amp;</span> <span class="nb">&amp;</span> <span class="nb">&amp;</span> <span class="nb">&amp;</span>  <span class="k">\\</span>
+                       United <span class="nb">&amp;</span> flies <span class="nb">&amp;</span> some <span class="nb">&amp;</span> large <span class="nb">&amp;</span> jet <span class="k">\\</span>
+                     <span class="nb">}</span>;
+     
+  <span class="c">% Draw the arcs. </span>
+  <span class="k">\tikzstyle</span><span class="nb">{</span>arc<span class="nb">}</span> = [&lt;-, thick];
+  <span class="k">\tikzstyle</span><span class="nb">{</span>leftarc<span class="nb">}</span> = [arc, bend left=45];
+  <span class="k">\tikzstyle</span><span class="nb">{</span>rightarc<span class="nb">}</span> = [arc, bend right=45];
+
+  <span class="k">\draw</span> (sentence-1-1.north) edge[leftarc] (sentence-1-2.north);
+  <span class="k">\draw</span> (sentence-1-3.north) edge[leftarc] (sentence-1-5.north);
+  <span class="k">\draw</span> (sentence-1-4.north) edge[leftarc] (sentence-1-5.north);
+  <span class="k">\draw</span> (sentence-1-5.north) edge[rightarc] (sentence-1-2.north);
+<span class="k">\end</span><span class="nb">{</span>tikzpicture<span class="nb">}</span>
+<span class="k">\end</span><span class="nb">{</span>document<span class="nb">}</span>
+</pre></div>
+</div>
+<div align="center" class="align-center"><img alt="_images/dep.png" class="align-center" src="_images/dep.png" style="width: 65%;" /></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  
+
+            <h3><a href="index.html">Table Of Contents</a></h3>
+            <ul>
+<li><a class="reference external" href="#">TiKZ Examples</a><ul>
+<li><a class="reference external" href="#machine-learning">Machine Learning</a><ul>
+<li><a class="reference external" href="#hidden-markov-model">Hidden Markov Model</a></li>
+</ul>
+</li>
+<li><a class="reference external" href="#natural-language-processing">Natural Language Processing</a><ul>
+<li><a class="reference external" href="#context-free-grammar">Context-Free Grammar</a></li>
+<li><a class="reference external" href="#dependency-parse">Dependency Parse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Previous topic</h4>
+            <p class="topless"><a href=""
+                                  title="previous chapter">TiKZ Examples</a></p>
+            <h3>This Page</h3>
+            <ul class="this-page-menu">
+              <li><a href="_sources/examples.txt"
+                     rel="nofollow">Show Source</a></li>
+            </ul>
+          <div id="searchbox" style="display: none">
+            <h3>Quick search</h3>
+              <form class="search" action="search.html" method="get">
+                <input type="text" name="q" size="18" />
+                <input type="submit" value="Go" />
+                <input type="hidden" name="check_keywords" value="yes" />
+                <input type="hidden" name="area" value="default" />
+              </form>
+              <p class="searchtip" style="font-size: 90%">
+              Enter search terms or a module, class or function name.
+              </p>
+          </div>
+          <script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  
+
+    <div class="footer">
+      &copy; Copyright 2012, Alexander Rush.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 0.6.4.
+    </div>
+  </body>
+</html>
