@@ -1,0 +1,27 @@
+\documentclass{beamer}
+\mode<presentation>
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tikz}
+
+% Needed for diagrams.
+\def\im#1#2{
+  \node(#1) [scale=#2]{\pgfbox[center,top]{\pgfuseimage{#1}}
+};}
+\input{pictures_header}
+
+\begin{document}
+
+\begin{frame}[t]{K-Means}
+  \vspace{-1cm}
+  \begin{figure}
+    \centering
+    \begin{tikzpicture}
+      \foreach \x in {1,...,10} {
+        \uncover<\x>{\im{kmeans\x}{0.6}}
+      }        
+    \end{tikzpicture}
+  \end{figure}
+\end{frame}
+
+\end{document}

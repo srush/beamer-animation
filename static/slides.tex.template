@@ -1,0 +1,32 @@
+\documentclass{beamer}
+\mode<presentation>
+\setbeamertemplate{navigation symbols}{}
+
+\usepackage{tikz}
+% \usetikzlibrary{}
+
+% Needed for diagrams.
+\def\im#1#2{
+  \node(#1) [scale=#2]{\pgfbox[center,top]{\pgfuseimage{#1}}
+};}
+\input{diagrams/pictures_header}
+
+\title{}
+\date{}
+\author{}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% \begin{frame}{Sample Animation} 
+%   \begin{tikzpicture}
+%      \foreach \x in {1,...,8} {
+%        \uncover<\x>{\im{animation\x}{1.0}}
+%      }        
+%   \end{tikzpicture}
+% \end{frame}
+
+\end{document}
